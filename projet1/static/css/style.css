@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: black;
+    font-family: Arial, sans-serif;
+    height: 23vh;
+}
+.logo{
+    font-size:40px ;
+    font-weight: bold;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu li {
+    list-style: none;
+    margin-right: 20px;
+}
+.menu li a {
+    text-decoration: none;
+    color: white;
+}
+.sous_menu{
+    cursor: pointer;
+}
+
+.sous_menu:hover .sous_list {
+    display: block;
+}
+
+.sous_list {
+    display: none;
+    position: absolute;
+    color: black;
+    width: 100%;
+    padding: 10px;
+    z-index: 1000;
+    list-style: none;
+}
+
+.sous_list li {
+    float: none;
+    width: 100%;
+    text-align: left;
+}
+
+.sous_list a {
+    padding: 10px;
+    color: black;
+    border-bottom: none;
+}
+
+.sous_list a:hover {
+    border-bottom: none;
+    color:brown;}
+
+.menu > .sous_menu::after {
+    content: " ▼"; 
+    font-size: 12px;
+}
+label #btn,
+label #retour{
+    color: white;
+    font-size: 30px;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+@media (max-width:944px){
+    .logo{
+        font-size: 30px;
+    }
+    .menu li a{
+        font-size: 14px;
+    }
+    .sous_menu{
+        font-size: 14px;
+    }
+}
+@media (max-width:860px){
+        label #btn{
+            display: block;
+        }
+        ul{
+            position: fixed;
+            width: 50%;
+            height: 100vh;
+            background-color: rgb(39, 36, 36);
+            border-radius: 18px;
+            top: 23vh;
+            left: -100%;
+            text-align: center;
+            flex-direction: column;
+            transition: left .5s;
+        }
+        ul li{
+            display: block;
+            margin: 5px 0;
+        }
+        .menu li a{
+            font-size: 17px;
+        }
+        .sous_menu{
+            font-size: 17px;
+        }
+        #check:checked ~ ul{
+            left: 0;
+            z-index: 9999;
+        } 
+        #check:checked ~ label #btn{
+            display: none;
+        }
+        #check:checked ~ label #retour{
+            display: block;
+        }
+        
+    
+}
