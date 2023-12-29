@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'Forumapp',
     'Connexion',
 
+
     'Forumapp',
     'Connexion',
     'Blogs',
