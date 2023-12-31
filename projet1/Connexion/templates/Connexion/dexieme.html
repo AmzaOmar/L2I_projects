@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Choix</title>
+    <style>
+        /* Styles CSS */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .btn-connexion {
+            background-color: #3498db;
+            color: #fff;
+        }
+        .btn-inscription {
+            background-color: #2ecc71;
+            color: #fff;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 10px 0;
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="chemin/vers/le/logo.png" alt="Logo">
+        </div>
+        <div class="links">
+            <a href="/connexion">Se connecter</a>
+            <a href="/inscription">Créer un compte</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <h2>Bienvenue ! Que voulez-vous faire ?</h2>
+        <a href="/connexion" class="btn btn-connexion">Se connecter</a>
+        <a href="/inscription" class="btn btn-inscription">Créer un compte</a>
+    </div>
+
+    <div class="footer">
+        © 2023 Nom de votre université. Tous droits réservés.
+    </div>
+</body>
+</html>
+

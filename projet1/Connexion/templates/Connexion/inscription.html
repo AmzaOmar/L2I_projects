@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription</title>
+    <style>
+    body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            padding: 530px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .btn {
+            display: block;
+            width: 200px;
+            margin: 10px auto;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .btn-connexion {
+            background-color: #3498db;
+            color: #fff;
+        }
+        .btn-inscription {
+            background-color: #2ecc71;
+            color: #fff;
+        }
+        /* Styles CSS intégrés */
+        /* ... */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Inscription</h2>
+        <form method="POST">
+            <!-- Formulaire d'inscription -->
+            {% csrf_token %}
+            <!-- Champs du formulaire -->
+            <input type="text" name="username" placeholder="Nom d'utilisateur" required><br><br>
+
+            <input type="email" name="email" placeholder="Adresse email" required><br><br>
+
+            <input type="password" name="password1" placeholder="Mot de passe" required><br><br>
+
+            <input type="password" name="password2" placeholder="Confirmer le mot de passe" required><br><br>
+
+            <input type="text" name="nom" placeholder="Nom" required><br><br>
+
+            <input type="text" name="prenom" placeholder="Prénom" required><br><br>
+
+            <input type="text" name="universite" placeholder="Université" required><br><br>
+
+            <input type="text" name="ufr" placeholder="UFR" required><br><br>
+
+            <input type="text" name="numero_carte" placeholder="Numéro de carte" required><br><br>
+
+            <input type="text" name="region" placeholder="Région" required><br><br>
+
+            <input type="date" name="date_naissance" placeholder="Date de naissance" required><br><br>
+
+            <input type="tel" name="numero_telephone" placeholder="Numéro de téléphone" required><br><br>
+              
+            <button type="submit">S'inscrire</button>
+        </form>
+    </div>
+</body>
+</html>
+
