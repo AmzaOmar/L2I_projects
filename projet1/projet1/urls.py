@@ -5,6 +5,8 @@ from Acceuil import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
+    path('',include('Acceuil.urls')),
     path('inscription/', inscription , name="inscription"),
     path('connexion/', connexion , name="connexion"),
 ]

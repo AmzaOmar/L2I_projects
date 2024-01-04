@@ -41,22 +41,24 @@ def inscription(request):
 
     return render(request, 'Connexion/inscription.html')
 
+from django.contrib.auth import authenticate, login
+from django.shortcuts import render, redirect
+
 def connexion(request):
-    
-    if request.method == "POST": #si la requette est de type POST  on connect l'utilisateur
-        email=request.POST.get("email")
-        pswrd=request.POST.get("password")
-        user = authenticate(email=email ,password=pswrd)
-    if user is not None and user.is_active:
+    if request.method == "POST": # Si la requête est de type POST
+        email = request.POST.get("email")
+        password = request.POST.get("password")
+        
+        user = authenticate(email=email, password=password)
+        
+        if user is not None and user.is_active:
             # Si l'utilisateur est actif, le connecter
             login(request, user)
             return redirect("acceuil")  # Redirection vers la vue d'accueil
-    else:
+        else:
             # Gérer les erreurs d'authentification, par exemple afficher un message d'erreur
             error_message = "Identifiants invalides. Veuillez réessayer."
-            return render(request, 'connexion/login.html', {'error_message': error_message})
-
+            return render(request, 'Connexion/connexion.html', {'error_message': error_message})
     
-    
-
-
+    # Si la requête n'est pas de type POST ou si l'authentification échoue, afficher la page de connexion
+    return render(request, 'Connexion/connexion.html')
