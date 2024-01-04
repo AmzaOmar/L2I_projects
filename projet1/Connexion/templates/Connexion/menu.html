@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Choix</title>
+    <title>Connexion ou inscription</title>
     <style>
         /* Styles CSS */
         body {
@@ -60,20 +60,17 @@
         <div class="logo">
             <img src="chemin/vers/le/logo.png" alt="Logo">
         </div>
-        <div class="links">
-            <a href="/connexion">Se connecter</a>
-            <a href="/inscription">Créer un compte</a>
-        </div>
+       
     </nav>
     
     <div class="container">
         <h2>Bienvenue ! Que voulez-vous faire ?</h2>
-        <a href="/connexion" class="btn btn-connexion">Se connecter</a>
-        <a href="/inscription" class="btn btn-inscription">Créer un compte</a>
+        <a href="{% url 'connexion' %}" class="btn btn-connexion">Se connecter</a>
+        <a href="{% url 'inscription' %}" class="btn btn-inscription">Créer un compte</a>
     </div>
 
     <div class="footer">
-        © 2023 Nom de votre université. Tous droits réservés.
+        © 2023 UASZ. Tous droits réservés.
     </div>
 </body>
 </html>

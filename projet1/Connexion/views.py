@@ -1,8 +1,11 @@
-from django.contrib.auth import get_user_model, login ,authenticate
+from django.contrib.auth import get_user_model, login ,authenticate ,logout
 from django.shortcuts import redirect, render
-from django.urls import include
+
 
 from Acceuil import views
+
+def menu(request):
+    return render(request,'Connexion/menu.html')
 
 User = get_user_model()
 
@@ -41,9 +44,6 @@ def inscription(request):
 
     return render(request, 'Connexion/inscription.html')
 
-from django.contrib.auth import authenticate, login
-from django.shortcuts import render, redirect
-
 def connexion(request):
     if request.method == "POST": # Si la requête est de type POST
         email = request.POST.get("email")
@@ -62,3 +62,8 @@ def connexion(request):
     
     # Si la requête n'est pas de type POST ou si l'authentification échoue, afficher la page de connexion
     return render(request, 'Connexion/connexion.html')
+
+
+def deconnexion(request):
+    logout(request)
+    return redirect("acceuil")
