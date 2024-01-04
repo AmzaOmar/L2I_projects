@@ -40,9 +40,6 @@ INSTALLED_APPS = [
     'Acceuil',
     'Forumapp',
     'Connexion',
-
-    'Forumapp',
-    'Connexion',
     'Blogs',
 ]
 
