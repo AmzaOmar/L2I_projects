@@ -10,11 +10,9 @@ class Utilisateur(AbstractUser):
     numero_carte = models.CharField(max_length=20)
     region = models.CharField(max_length=20)
     date_naissance = models.DateField(default=datetime.date.today)
-
     numero_telephone = models.CharField(max_length=10)
-    
     
 
     def __str__(self):
-        return self.numero_carte
+        return self.prenom
 

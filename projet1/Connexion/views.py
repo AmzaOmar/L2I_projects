@@ -9,7 +9,7 @@ def menu(request):
 
 User = get_user_model()
 
-def inscription(request):
+def inscription(request):  #la fonction de connexion
     if request.method == "POST":
         username = request.POST.get("username")
         email = request.POST.get("email")
@@ -24,7 +24,7 @@ def inscription(request):
         date_naissance = request.POST.get("date_naissance")
         numero_telephone = request.POST.get("numero_telephone")
 
-        if password1 == password2:  # Vérification des mots de passe
+        if password1 == password2:  #crreation de l'utilisateur
             user = User.objects.create_user(
                 username=username,
                 email=email,
@@ -39,28 +39,24 @@ def inscription(request):
                 numero_telephone=numero_telephone
             )
             login(request, user)
-            # Redirection vers la page d'accueil
-            return redirect( 'acceuil')  # Remplacez 'nom_de_la_vue_accueil' par le nom de votre vue d'accueil
+            return redirect('acceuil')
 
     return render(request, 'Connexion/inscription.html')
 
 def connexion(request):
-    if request.method == "POST": # Si la requête est de type POST
+    if request.method == "POST":
         email = request.POST.get("email")
         password = request.POST.get("password")
         
-        user = authenticate(email=email, password=password)
+        user = authenticate(request, username=email, password=password)
         
         if user is not None and user.is_active:
-            # Si l'utilisateur est actif, le connecter
             login(request, user)
-            return redirect("acceuil")  # Redirection vers la vue d'accueil
+            return redirect("acceuil")
         else:
-            # Gérer les erreurs d'authentification, par exemple afficher un message d'erreur
             error_message = "Identifiants invalides. Veuillez réessayer."
             return render(request, 'Connexion/connexion.html', {'error_message': error_message})
     
-    # Si la requête n'est pas de type POST ou si l'authentification échoue, afficher la page de connexion
     return render(request, 'Connexion/connexion.html')
 
 

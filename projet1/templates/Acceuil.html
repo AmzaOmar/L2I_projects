@@ -1,18 +1,21 @@
 {% extends "base.html" %}
-{% block title %}Acceuil{% endblock%}
-{% block content%}
+{% block title %}Acceuil{% endblock %}
+{% block content %}
 <div class="corps">
     <div class="empreinte">
         <img src="/static/images/1.png" alt="Senegal" class="Senegal" width="200px">
         <p>
-            Soyez encore plus proche <br> de vos colégues
+            Soyez encore plus proche <br> de vos collègues
         </p>
         <div class="btn">
-            <a href="Annonces">Commencez l'aventure</a>
+            {% if user.is_authenticated %}
+                <p>Salut {{ user.username }}</p>
+                <a href="{% url 'deconnexion' %}">Déconnexion</a>
+            {% else %}
+                <a href="{% url 'connexion' %}">Connexion</a>
+                <a href="{% url 'inscription' %}">Inscription</a>
+            {% endif %}
         </div>
     </div>
 </div>
-<body class="body">
-    
-</body>
- {% endblock%}
+{% endblock %}
