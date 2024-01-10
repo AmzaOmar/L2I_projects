@@ -83,6 +83,9 @@ label #retour{
     display: none;
 }
 @media (max-width:944px){
+    .header{
+        background-color: rgba(0, 0, 0, 0.8);
+    }
     .logo{
         font-size: 30px;
     }
@@ -103,7 +106,7 @@ label #retour{
             height: 100vh;
             background-color: rgb(39, 36, 36);
             border-radius: 18px;
-            top: 23vh;
+            top: 15vh;
             left: -100%;
             text-align: center;
             flex-direction: column;
